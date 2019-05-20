@@ -1,0 +1,48 @@
+<!--
++++++++++++++++++++++++++++++++++++ JSON +++++++++++++++++++++++++++++++++++++++++
+
+
+AJAX
+    Key Players:
+        -- XMLHttpRequest (ActiveXObject in IE4 and below)
+        -- JavaScript
+        -- XML/JSON 
+        -- DOM
+    
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+    
+    var person = {
+        name:'Sachin',
+        city:'Mumbai',
+        stats:{
+            runs:50000,
+            avg:70,
+            description:'Opening Batsman',
+            wickets:100
+        }
+    }
+
+    // converts JS Object to JSON
+    var jsonData = JSON.stringify(person);
+    console.log(jsonData);
+
+    // converts JSON to JS Object
+    var JSObj = JSON.parse(jsonData);
+    console.log(JSObj);
+
+
+    
+    
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

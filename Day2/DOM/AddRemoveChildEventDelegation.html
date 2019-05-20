@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.css" rel="stylesheet">
+    
+
+</head>
+<body class="container">
+    <div class="jumbotron">
+            <h1>Using Event Delegation</h1>
+    </div>
+    
+    <label for="myComment">Comment</label><input type="text" id="myComment"><input type="button" value="Add" class="btn btn-success btn-sm" onclick="addElement()"> <br>
+    Your Comments: <br> 
+    <ul id="myList">
+        <!-- <li>adsad <span class="glyphicon glyphicon-trash"></span> </li> -->
+
+    </ul>
+    <script>
+        var AllLi = document.querySelectorAll('#commentList li');
+        var list = document.getElementById('myList');
+        function removeElement(){
+                    if(event.target.nodeName == 'SPAN'){
+                list.removeChild(event.target.parentNode);
+            }
+        }
+
+        function addElement(){
+            
+            var li = document.createElement('li');
+            var comment = document.getElementById('myComment').value;
+            var glyphSpan = document.createElement('span');
+            glyphSpan.className = "glyphicon glyphicon-trash";
+
+            li.innerHTML = comment;
+            li.appendChild(glyphSpan);
+            glyphSpan.addEventListener('click', removeElement);
+            list.appendChild(li);
+
+            document.getElementById('myComment').value = "";
+        }
+    
+    </script>
+
+</body>
+</html>

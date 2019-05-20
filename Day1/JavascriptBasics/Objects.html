@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+/*    
+    // Literal syntax
+    var company = {
+        name:"MathWorks",
+        locations:['Pune', 'Bangalore'],
+        isMNC:true,
+        address:{
+            block:'B Wing',
+            floor:'9',
+            city:'Bangalore',
+            fullAddress: function(){
+                return this.block + ', ' + this.floor + ', ' + this.city;
+            }
+        },
+        getDetails: function(){
+            console.log("The company "+ this.name + " is in " + this.address.fullAddress());
+        }
+    };
+
+    company.getDetails();
+*/
+/*
+
+    // Object Constructor syntax
+    var obj = new Object();
+    obj.name = "Jitender";
+    obj.city = "Bangalore"; 
+
+*/
+/*    
+    // Object Constructor
+    function Car(name, speed){
+        this.name = name || "marazzo";
+        this.speed = speed || 250;
+        this.accelerate = function(){
+            console.log("The car " + this.name + " is running at " + this.speed + " kmph.");
+        }
+    }
+
+
+    var carObj = new Car('ciaz');
+    carObj.accelerate();
+
+
+    function JamesBondCar(){
+        this.canFly = true;
+        this.useNitro = true;
+    }
+
+    JamesBondCar.prototype = new Car(); // direct multiple inheritance is not supported
+    var bondCar = new JamesBondCar();
+
+    console.log(bondCar instanceof JamesBondCar); //true
+    console.log(bondCar instanceof Car); //true 
+    console.log(JamesBondCar.prototype.isPrototypeOf(bondCar));
+    console.log(Car.prototype.isPrototypeOf(bondCar));
+
+    function BatmanCar(){
+        this.useWeapons = true;
+    }
+
+    BatmanCar.prototype = new Car();
+
+    var batmanCarOne = new BatmanCar();
+    BatmanCar.prototype = new JamesBondCar();
+    var batmanCarTwo = new BatmanCar();
+
+    console.log(BatmanCar.prototype.isPrototypeOf(batmanCarOne));
+    console.log(BatmanCar.prototype.isPrototypeOf(batmanCarTwo));
+*/
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

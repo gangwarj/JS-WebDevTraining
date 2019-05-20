@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="button" name="" id="targetButton" value="Click me">
+    <input type="button" name="" id="addHandler" value="Add Handler" onclick ="addHandler()">
+    <input type="button" name="" id="removeHandler" value="Remove Handler" onclick="removeHandler()">
+    
+    <script>
+    
+        var btn = document.getElementById('targetButton');
+        // var addHandlerBtn = document.getElementById('addHandler');
+        // var removeHandlerBtn = document.getElementById('removeHandler');
+
+        // btn.addEventListener('click', function(){alert('you clicked');})
+        // btn.onclick = function(){
+        //         confirm('you clicked');
+        //     }
+
+        
+        function TargetHandler(){
+            alert('Voila!!!');
+        }
+
+        function addHandler(){
+            btn.addEventListener('click', TargetHandler);
+        }
+
+        function removeHandler(){
+            btn.removeEventListener('click', TargetHandler);
+        }
+    
+    </script>
+</body>
+</html>

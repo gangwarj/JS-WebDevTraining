@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+    <style>
+        #impText{
+            color: blueviolet;
+        }
+    
+    </style>
+    <script>
+        function addThem(){
+            var num1 = document.getElementById("Num1").value;
+            var num2 = document.getElementById("Num2").value;
+            var resultPara = document.getElementById("result");
+            resultPara.innerHTML = "<b><i>Summation:<i><b> "  + (+num1 + +num2);
+
+            var newPara = document.createElement("p");
+            var newHead = document.createElement("h3");
+            newHead.innerHTML = "Created on the fly";
+            newPara.innerHTML = "<b><i>Summation:<i><b> "  + (+num1 + +num2);
+            document.querySelector('body').appendChild(newHead);
+            document.querySelector('body').appendChild(newPara);
+
+        }
+    </script>
+</head>
+<body>
+    <div style="margin:10px; border:2px dashed green; padding:2% 28%">
+        <h2>Additon of 2 Numbers using <i><b><span id="impText">LPL</span></b></i> </h2>
+        <label for="Num1">Number1: </label><input type="number" id="Num1"><br>
+        <label for="Num2">Number2: </label> <input type="number" id="Num2"><br>
+        <input type="button" value="Add" onClick="addThem()"><br>
+        <p id="result"></p><br>
+    </div>
+    
+
+    
+</body>
+</html>

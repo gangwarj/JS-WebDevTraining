@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #postList{
+            margin: 50px;
+        }
+    li{
+        border: 1px solid grey;
+        border-radius: 5px;
+        margin: 10px;
+        padding: 10px;
+        /* height: 100px; */
+    /* width: 300px; */
+    margin: 15px 0;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    }
+
+    li:hover{
+        /* height: 133px; */
+        /* width: 400px; */
+        background-color: aqua;
+        margin-left: -50px;
+    }
+    </style>
+    <script>
+    // 1. Create XMLHttpRequest Object
+    // 2. Configure XMLHttpRequest Object
+    // 3. Send the Async request
+    // 4. When response is received, show it in the DOM(UI)
+
+   
+
+    function ClickHandler(){
+        // if(window.XMLHttpRequest){ // CHeck if browser supports it
+        //     var xmlHttpObj = new XMLHttpRequest();
+        // }elseif(window.ActiveXObject){ // IE4 and earlier versions
+
+        // }
+
+        var xmlHttpObj = new XMLHttpRequest();
+        xmlHttpObj.open("GET", "https://jsonplaceholder.typicode.com/posts"); // configuring the AJAX call
+        xmlHttpObj.send(); //make an AJAX call
+        xmlHttpObj.onreadystatechange = function(){
+            if(xmlHttpObj.readyState == 4 && xmlHttpObj.status == 200){
+                //update the UI
+                var resp = JSON.parse(xmlHttpObj.responseText);
+                console.log(JSON.parse(xmlHttpObj.responseText));
+                var ul = document.querySelector('#postList');
+                for(var index in resp){
+                    var post = resp[index];
+                    var title = post.title;
+                    
+                    var li = document.createElement('li');
+                    li.innerText = title;
+                    ul.appendChild(li);
+
+
+                }
+            }
+        }
+    }
+    
+    
+    </script>
+</head>
+<body>
+    <input type="button" value="Get Data (Button) " onClick="ClickHandler()"></input>
+    <ul id="postList"></ul>
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <script>
+/*
+        var MathModule = (function(){
+            function Add(x, y){
+                return x + y;
+            }
+
+            function Multiply(x, y){
+                return x * y;
+            }
+
+            function Divide(x, y){
+                return x / y;
+            }
+
+            return {
+                Addition: Add,
+                Multiply: Multiply
+            }
+
+        })();
+        
+        console.log(MathModule.Addition(10, 20)); // calls Add function of MathModule
+        console.log(MathModule.Multiply(10, 20)); // calls Multiply function of MathModule
+        console.log(MathModule.Divide(10, 20));  // Not available
+*/    
+        //Augmenting Modular method
+        var ExistingObj = {PI:Math.PI}
+        var NewExistingObj = (function(eObj){
+
+            eObj.Add = function(x, y){
+                return x + y;
+            }
+
+            eObj.Multiply = function(x, y){
+                return x * y;
+            }
+
+            eObj.Divide = function (x, y){
+                return x / y;
+            }
+
+            return eObj;
+
+        })(ExistingObj);
+
+
+        console.log(NewExistingObj.Add(20, 80))
+
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

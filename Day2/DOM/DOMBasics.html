@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .Even{
+            border: 2px dashed red;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        #containerDiv{
+            border: 2px dotted blue;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="containerDiv">
+        Hello DOM!
+    </div>
+
+    <div class="Even">
+
+        Second div
+
+    </div>
+
+    <div>
+
+        Third div
+
+    </div>
+
+    <div class="Even">
+
+            Fourth div
+    
+        </div>
+
+    <script>
+    /*
+        document.write('Hello DOM');
+        var divElement = document.getElementById('containerDiv');
+        divElement.innerHTML = 'Dynamically Changed';
+        console.log(divElement.innerHTML);
+        var allDivs = document.getElementsByTagName('div');
+        console.log(allDivs);
+        for(var i = 0; i < allDivs.length; i++){
+            console.log(allDivs[i].innerText);
+        }
+
+        var divsWithClasses = document.getElementsByClassName('Even');
+        console.log(divsWithClasses.length)
+    */
+    
+        // HTML5
+
+        // 'getElementById' is faster than 'querySelector'
+        var divWithId = document.querySelector('#containerDiv'); // return first match
+        var divWithClassEven = document.querySelector('.Even'); // return first match
+        var divsWithClassEven = document.querySelectorAll('.Even'); // returns array of all matches
+        console.log(divWithId.innerText);
+
+        console.log(divsWithClassEven.length);
+        
+
+    
+
+    </script>
+</body>
+</html>

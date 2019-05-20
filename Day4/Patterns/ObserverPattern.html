@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+
+    <script>
+    
+        function BirthdayPartyEvent(){
+            this.guest = [];
+        }
+
+        BirthdayPartyEvent.prototype = {
+            subscribe: function( fn ){
+                this.guest.push(fn);
+            },
+
+            unsubscribe:function( fn ){
+                this.guest = this.guest.filter(function(item){
+                    if(item !== fn){
+                        return item;
+                    }
+                });
+            },
+            execute:function(eventDetails){
+                this.guest.forEach(function(item){
+                    item(eventDetails);
+                })
+            }
+        }
+
+        function GuestHandler(eventDetails){
+            console.log(eventDetails + ' Welcome guest ');
+        }
+
+        function SpecialGuestHandler(eventDetails){
+            console.log(eventDetails + ' Welcome drinks for Special guests !');
+        }
+
+        var partyPerson = new BirthdayPartyEvent();
+        partyPerson.subscribe(GuestHandler);
+        partyPerson.subscribe(SpecialGuestHandler);
+        partyPerson.unsubscribe(GuestHandler);
+
+        partyPerson.execute('Hurrayyy!! My Birthday Party is ONN!!!!')
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+    
+    var cars = ["BMW", "AUDI", "FERRARI"];
+    var moreCars = new Array("TATA", "MARUTI", "HYUNDAI");
+
+    cars.forEach(function(theCar, index, cars){
+        console.log(theCar); // this is an sync call
+    })
+
+    console.log('Program ended');
+
+    for(var theCar in cars){
+        console.log(theCar); //gives out hte indices
+        console.log(cars[theCar]);
+    }
+
+    //ES6 feature
+    for(var theCar of cars){
+        console.log(theCar);
+    }
+
+    cars.concat(moreCars);
+
+    cars.push("Aston Martin");
+    cars.pop(); //pops the top element
+    console.log(cars);
+    console.log("All cars " + cars);
+
+    for(var theCar of cars){
+        console.log(theCar);
+    }
+
+
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

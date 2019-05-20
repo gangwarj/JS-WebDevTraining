@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+/*    
+    var player = {name:'Sachin', city:'Mumbai'};
+    
+    player.name = 'Virat'; //possible as the property is writable
+
+    console.log(player.name);
+    console.log(player['name']); // Associative array syntax
+    
+    for(var prop in player){
+        console.log(prop + ' : ' + player[prop]);
+    }
+*/
+/*
+    var obj = {};
+    Object.defineProperty(obj, 'newProp', {value:200, writable:false, enumerable:true});
+    Object.defineProperty(obj, 'newProp1', {value:300, writable:true, enumerable:false}); // will not be there in for-loop at line 23
+    obj.newProp = 500; //does not work as the property in not writable
+    obj.newProp1 = 500;//work as the property in not writable
+
+    for(var prop in obj){
+        console.log(prop + ' : ' + obj[prop]);
+    }
+*/
+/*
+    function Emp(){
+        this.salary = 50000;
+        setTimeout(function(){
+            // 'this' is window object when this function is called
+            console.log(this.salary); // print undefined as the conetxt is lost when this function is called after 2 seconds
+        }, 2000);
+
+        var that = this;
+        setTimeout(function(){
+            // this works as that is a closure variable and has the this context
+            console.log(that.salary); 
+        }, 2000);
+    }
+
+    var e = new Emp();
+*/
+/*
+    // Contextual methods
+    // call, bind, apply
+    var person = {name:'Jitender', getDetails: function( message ){console.log(message + this.name)}};
+    person.getDetails('Hi ');
+
+
+    var anotherPerson = {name:'Amit'};
+    // The only diff b/w 'call' and 'apply' is that 'apply' accepts an array of params 
+    // whereas the 'call' acceps a ',' separated list
+    person.getDetails.call(anotherPerson, 'Hello '); // noIdea why this was designed
+    person.getDetails.apply(anotherPerson, ['Hello ']); // absolutely noIdea why this was also designed to add to the uselessness of 'call'
+
+    var theFunctionBindedWithContext = person.getDetails.bind(anotherPerson, 'Hellooww '); // Unethical function - can be used to silently use other functionalitites :P :P 
+    // 100 lines of code
+    theFunctionBindedWithContext();
+*/
+
+    // Use of bind
+    var arr = [10, 20, 30, 40];
+    console.log(Math.max(arr)); //does not work as arr is an array which is not accepted
+    console.log(Math.max.apply(null, arr));
+
+    function Car(name, speed){
+        this.name = name || "i20";
+        this.speed = speed || 200;
+    }
+
+    function JamesBondCar(fly) {
+        Car.call(this, 'BMW', 300);
+        this.canFly = fly;
+    }
+
+    var jbc = new JamesBondCar(true); // this has all properties of car as well
+
+    Math.sqrt();
+    Math.max();
+    Math.random();
+
+    var area;
+    var r = 10;
+
+    with(Math){
+        area = PI * r * r;
+        console.log(random());
+    }   
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

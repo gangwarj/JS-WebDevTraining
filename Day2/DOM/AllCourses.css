@@ -1,0 +1,22 @@
+.courseDiv{
+    border:1px solid black;
+    border-radius: 10px;
+    margin: 5px 10px;
+    padding: 10px 10px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+}
+.courseDiv:hover{
+    margin-left: -5px;
+}
+
+.likeBtn{
+    margin: 5px;
+}
+
+img{
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 5px;
+}

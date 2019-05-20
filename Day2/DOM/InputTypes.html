@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+    
+        function onLoadHandler(){
+            var textField = document.querySelector('input');
+            console.log(textField.value);
+            textField.value = 'Dynamically Changed Value';
+    
+            /*
+                Event Driven Programming (EDP)
+                    -- Object
+                    -- Event
+                    -- Event handler function
+            */
+        }
+
+
+        function clickHandler(){
+            var textField = document.querySelector('input');
+            console.log(textField.value);
+            textField.value = 'Changed by button click';
+
+            var para = document.getElementById('result');
+            para.innerText = "Result: " + textField.value;
+        }
+        
+    
+    </script>
+</head>
+<body onLoad="onLoadHandler()">
+    Username: <input type="text" value="initial value">
+    <input type="button" value="Submit" onClick="clickHandler()">
+    <p id="result"></p>
+
+
+
+</body>
+</html>

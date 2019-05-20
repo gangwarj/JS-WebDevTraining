@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <script src="Promise.js"></script>
+    <script>
+    
+        var aPromise = GetPostsData();
+        aPromise.then(( responseFromResolve )=>{
+            return JSON.parse(responseFromResolve);
+        },
+        (errorFromReject)=>{
+            return errorFromReject + " added in 'then' reject";
+        }).then((respFromThenResolve)=>{
+            console.log(respFromThenResolve) ;
+        }, 
+        (respFromThenReject)=>{
+            console.log(respFromThenReject);
+        });
+
+        console.log('Program finished...')
+
+    
+    </script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html>

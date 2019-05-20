@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+
+    
+    function SubmitHandler(){
+        // submit the page & refereshes
+        event.preventDefault();
+        console.log("Within SubmitHandler: submitted")
+    }
+
+    function ClickHandler(){
+        event.preventDefault();
+    }
+    
+    
+    </script>
+</head>
+<body>
+    <form action="" method="post" onSubmit="SubmitHandler()">
+        <input type="button" value="Get Data (Button) "></input>
+        <input type="submit" value="Get Data (Submit) "></input>
+        <a href="http://www.google.com" target="blank" onClick="ClickHandler()">Go to Google</a>
+        <button>
+            Click
+        </button>
+    </form>
+
+    
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <title>Document</title>
+    <script src="ExternalJS.js"></script>
+    <script src="Calculator.js"></script>
+    <script>
+        'use strict';
+        var message = "Hello world!";
+        console.log(message);
+        console.log("again " + message);
+    </script>
+    <script>
+        console.log("different script tag: " + message );
+        function Test(){
+            var functionScoped = 100;
+            console.log(functionScoped);
+            var x = 5;
+            console.log(x)
+        }
+
+        Test();
+        // console.log(functionScoped);
+
+
+        // variable initialization without "var" construct
+        // makes it a Global variable even if it is inside a function
+        x = 10;
+
+
+
+        //+++++++++++++++++++++++++Operators++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        var strOne = "MathWorks";
+        var strTwo = "MathWorks";
+
+        console.log(strOne == strTwo);
+
+        var numOne = 10;
+        var numTwo = "10";
+        console.log( numOne == numTwo); //checks the value
+        console.log(numOne === numTwo); //checks value and type
+
+        var anotherNum = 20;
+        console.log(numOne + anotherNum + numTwo);// appends numTwo
+        console.log(numTwo + numOne + anotherNum); // appends all numbers
+
+        console.log((numOne == numTwo) ? "Equal" : "Not Equal");
+
+        console.log(isNaN("xyz" - 20));
+
+        // Converting string to number
+        var convertnumTwoToNumber = parseInt(numTwo); // gives NaN for empty value, string starting with number can be converted
+        console.log(typeof convertnumTwoToNumber); 
+        var n = +numTwo; //gives 0 for empty value, string starting with number can not be converted
+        console.log(typeof n);
+        
+        // referred from different file
+        console.log(Add(20, 30));
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <script>
+    
+    var person = {name:'Virat', city:"Delhi"}; // Singleton
+
+    var singletonPerson = (function(){         // Singleton using IIFE
+        return {name:'Virat', city:"Delhi"};
+    })();
+
+    var SingletonAnotherPerson = (function(){
+        var isInstanciated;                    // Singleton
+
+        functionInit(){
+            return {name:'Virat', city:"Delhi"};
+        }
+
+        return {
+            getInstance:function(){
+                if(!isInstanciated){
+                    isInstanciated = Init();
+                }
+                return isInstanciated;
+            }
+        }
+    })();
+
+
+    var theInstance = SingletonAnotherPerson.getInstance(); // creates a new Instance
+    var theInstanceAgain = SingletonAnotherPerson.getInstance(); // return the previous instance because it has been created already
+    
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

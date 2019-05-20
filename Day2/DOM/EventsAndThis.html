@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+    
+        // function onChangeHandler(){
+        //     var para = document.getElementById('textDisp');
+        //     var field = document.getElementById('txtInput');
+        //     para.innerHTML = field.value;
+        // }
+        
+        function onInputHandler(obj){
+            var para = document.getElementById('textDisp');
+            var field = document.getElementById('txtInput');
+            // para.innerHTML = field.value;
+            para.innerHTML = obj.value;
+        }
+    
+    </script>
+</head>
+<body>
+    <!-- Enter Name: <input type="text" id="txtInput" onchange="onChangeHandler()">
+    <p id="textDisp"></p> -->
+
+    Enter Name: <input type="text" id="txtInput" oninput="onInputHandler(this)">
+    <p id="textDisp"></p>
+</body>
+</html>

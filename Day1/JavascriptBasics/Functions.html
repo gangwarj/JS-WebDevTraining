@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+/*    
+    FuncDecl();
+
+    //function is hoisted
+    function FuncDecl(){
+        console.log("within FuncDecl..");
+    }
+
+    console.log(typeof FuncDecl);
+*/
+/*    
+    //only variable is hoisted and not the anonymous function
+    var FuncAsExpression = function(){
+        console.log("within FuncAsExpression");
+    }
+
+    FuncAsExpression();
+
+    console.log(typeof FuncAsExpression);
+*/    
+/*
+    // Using a Function Type
+    var usingFunctionType = new Function("x", "y", "return x + y");
+    console.log(usingFunctionType(10, 20));
+*/
+/*
+    // IIFE - Immediate Invocable Function Expression
+    var result = (function(x, y){
+        return x+y;
+    })(10, 20);
+    
+    console.log(result);
+*/    
+/*
+    // All function parameters are by default optional
+    function AddMe(x, y){
+        x = x || 10;
+        y = y || 20;
+        return x+ y;
+    }
+
+    // valid calls
+    AddMe(); 
+    AddMe(10);
+    AddMe(10, 20);
+*/
+/*
+    // Recursive functions
+
+    function factorial(x){
+        if( x <= 1)
+            return 1;
+        
+            return x * factorial(x-1);
+    }
+
+    console.log(factorial(4));
+*/
+/*
+    // Inner Functions
+
+    function Hypotenuse(l ,b){
+
+        function square(x){
+            return x * x;
+        }
+
+        return Math.sqrt(square(l) + square(b));
+    }
+
+    // console.log(square(10)); // square not defined outside Hypotenuse.
+    console.log(Hypotenuse(10, 20));
+*/
+/*
+    // Asynchronous Functions
+
+    console.log("Calling set Timeout...");
+    setTimeout(function(){
+        console.log("called after 2 seconds...");
+    
+    }, 2000); // waits for atleast 2 seconds - will execute only if the current call stack is empty and 2 seconds have elapsed
+    console.log('Program ended..');
+
+
+    console.log("Calling set Timeout...");
+    setInterval(function(){
+        console.log("called after 2 seconds...");
+    
+    }, 2000); // executes every 2 seconds 
+    console.log('Program ended..');
+*/ 
+
+    // Functions that return a function
+
+    function Outer(){
+        var x = 10;
+        console.log('Outer function called');
+        return function(){
+            console.log(x); // should have been undefined as Outer has finished executing but it does not because of Closures
+            console.log('Inner function called.');
+        }
+    }
+
+    Outer(); // Inner never gets called;
+    var inner = Outer(); 
+    inner(); //Inner gets called
+
+    // function currying
+    Outer()(); //inner gets called
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <script>
+/*    
+    // 1. Block scoped variables.
+    // 'let' 
+        // -- makes the variable block scoped 
+        // -- prevents variable hoisting
+        // -- window object cannot access 'let' variables
+        // -- does not allow re-declaration of a variable in the same scope like 'var' which re-declares it
+    if(true){
+        let x = 100;
+        if(true){
+            let x = 200;
+            console.log(x);
+        }
+    }
+
+    
+    console.log(x); // reference error as the variable 'x' is block scoped to 'if-statement'
+
+*/
+
+/*
+    // 2. 'const'
+        // -- should be initialized with definition
+        // -- cannot be modified
+
+    const PI = 3.14;
+    PI = 31.4; 
+*/ 
+
+/*
+    // 3. Destructuring - Arrays & Objects
+
+    // ---- Arrays ----
+    let cars = ['BMW', 'HONDA', 'FERRARI'];
+    // let [carOne, carTwo, carThree, carFour] = cars; // order is important
+    // console.log(carOne + carTwo + carThree + carFour);
+    let [carOne, , , carFour="DefaultCar"] = cars;
+    console.log(carOne + carFour);
+    
+
+
+    // ---- Object ----
+
+    let company = {name:'MathWorks', city:'Bengaluru'};
+    let {city, title, name} = company; // order not important, matched using 'key' name
+    console.log(city + name + title);
+*/
+
+/*
+    // 4. Spread Operator - Arrays & Objects
+    var cars = ["BMW", "HYUNDAI", "FERRARI"];
+    var moreCars = ["TATA", "MAHINDRA", "JEEP"];
+    var allCars = [...cars, ...moreCars, "SKODA"]; // deep copy
+    console.log(allCars);
+
+
+    let person = {name:'Sachin', city:'Mumbai'};
+    let player = {...person, runs:50000};
+    console.log(player);
+*/
+/*
+    // 5. Functions
+        // Default Parameters
+        
+            // ES5
+            // function PrintBooks(author, title){
+            //     author = author || 'Unknown';
+            //     title = title || 'uUntitled';
+            // }
+
+            // ES6
+            // function PrintBooks(author = "Unknown", title="Unknown"){
+            //     console.log(author, title);
+            // }
+
+            // PrintBooks();
+            // PrintBooks("Jitender Gangwar", "Code it the other way")
+
+        // All Other Parameters
+
+        function PrintBooks(author, ...title){
+            console.log(author, title);
+        }
+        PrintBooks();
+        PrintBooks("Jitender Gangwar", "Code it the other way")
+        PrintBooks("Jitender Gangwar", "Code it the other way", "Still not the correct way");
+*/
+
+    // 6. Arrow Functions
+    var Square = function(x){
+        return x * x;
+    }
+
+    var Square = (x) => {
+        return x * x;
+    }
+
+    var Square = x => x * x;
+
+    // allCars.forEach(function(car){console.log(car)});
+    // allCars.forEach(car=>console.log(car));
+
+
+    // function Emp(){
+    //     this.salary = 500000;
+    //     setTimeout(function(){
+    //         console.log(this.salary); // errors out
+    //     }, 2000)
+    // }
+
+    
+    function Emp(){
+        this.salary = 500000;
+        setTimeout(() => {
+            console.log(this.salary); // works - arrow functions does not have their own context and gets binded with the parent context.
+                                      // and as it does not have implicit 'this' they cannot be used in constructors   
+                                    //   it gets binded to the context it was created in
+        }, 2000)
+    }
+
+    var e = new Emp();
+
+
+    
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
